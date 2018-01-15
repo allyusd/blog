@@ -1,4 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="https://blog.hongjianching.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.hongjianching.com/" rel="alternate" type="text/html" /><updated>2018-01-15T22:18:53+08:00</updated><id>https://blog.hongjianching.com/</id><title type="html">Jian-Ching’s Notebook</title><subtitle>An notebook website.</subtitle><author><name>Hong, Jian-Ching</name><email>allyusd yahoo com tw</email><uri>https://www.HongJianChing.com/</uri></author><entry><title type="html">Install SDL2 with Cpp on Ubuntu</title><link href="https://blog.hongjianching.com/2017/04/03/install-sdl2-with-cpp-on-ubuntu/" rel="alternate" type="text/html" title="Install SDL2 with Cpp on Ubuntu" /><published>2017-04-03T00:00:00+08:00</published><updated>2017-04-03T00:00:00+08:00</updated><id>https://blog.hongjianching.com/2017/04/03/install-sdl2-with-cpp-on-ubuntu</id><content type="html" xml:base="https://blog.hongjianching.com/2017/04/03/install-sdl2-with-cpp-on-ubuntu/">&lt;h1 id=&quot;install-sdl2-on-ubuntu&quot;&gt;Install SDL2 on Ubuntu&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="https://blog.hongjianching.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.hongjianching.com/" rel="alternate" type="text/html" /><updated>2018-01-15T22:40:35+08:00</updated><id>https://blog.hongjianching.com/</id><title type="html">Jian-Ching’s Notebook</title><subtitle>An notebook website.</subtitle><author><name>Hong, Jian-Ching</name><email>allyusd yahoo com tw</email><uri>https://www.HongJianChing.com/</uri></author><entry><title type="html">Visual Studio Code with .Net Core</title><link href="https://blog.hongjianching.com/2018/01/14/visual-studio-code-with-dotnet-core/" rel="alternate" type="text/html" title="Visual Studio Code with .Net Core" /><published>2018-01-14T00:00:00+08:00</published><updated>2018-01-14T00:00:00+08:00</updated><id>https://blog.hongjianching.com/2018/01/14/visual-studio-code-with-dotnet-core</id><content type="html" xml:base="https://blog.hongjianching.com/2018/01/14/visual-studio-code-with-dotnet-core/">&lt;p&gt;.Net Core is cross-platform solution, Visual Studio Code is cross-platform development tool, that is a good choice.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-visual-studio-code-and-net-core&quot;&gt;Install Visual Studio Code and .Net Core&lt;/h2&gt;
+
+&lt;p&gt;First, install &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt;, current version is 1.19.2。&lt;/p&gt;
+
+&lt;p&gt;Then install &lt;a href=&quot;https://www.microsoft.com/net/&quot;&gt;.NET Core&lt;/a&gt;, current version:&lt;/p&gt;
+
+&lt;p&gt;.Net Core SDK 2.1.4&lt;/p&gt;
+
+&lt;p&gt;.Net Core Runtime 2.0.5&lt;/p&gt;
+
+&lt;h2 id=&quot;hello-world-example&quot;&gt;Hello World example&lt;/h2&gt;
+
+&lt;p&gt;Create &lt;strong&gt;hello_world&lt;/strong&gt; folder, open vs-code。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018-01-14-visual-studio-code-with-dotnet-core/001.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Using &lt;strong&gt;new&lt;/strong&gt; command create a console project in terminal ( Ctrl+` ). Will see files for project in explorer at left sidebar after execute.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new console
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then using &lt;strong&gt;run&lt;/strong&gt; execute program, will display &lt;strong&gt;Hello World&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet run
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018-01-14-visual-studio-code-with-dotnet-core/002.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#dotnet-restore&quot;&gt;Missing dotnet restore command?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;develop-and-debugging&quot;&gt;Develop and Debugging&lt;/h2&gt;
+
+&lt;p&gt;First file is &lt;strong&gt;hello_world.csproj&lt;/strong&gt;, content is project setting.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&amp;gt;
+
+  &amp;lt;PropertyGroup&amp;gt;
+    &amp;lt;OutputType&amp;gt;Exe&amp;lt;/OutputType&amp;gt;
+    &amp;lt;TargetFramework&amp;gt;netcoreapp2.0&amp;lt;/TargetFramework&amp;gt;
+  &amp;lt;/PropertyGroup&amp;gt;
+
+&amp;lt;/Project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Last file is &lt;strong&gt;Program.cs&lt;/strong&gt;, is Hello World example code.&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hello_world&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Program&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If first open C# file, vs-code recommend install C# extension package, choose to install.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018-01-14-visual-studio-code-with-dotnet-core/003.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Restart vs-code after install extension, will tip add debug config, just see yes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018-01-14-visual-studio-code-with-dotnet-core/004.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just modify &lt;strong&gt;Program.cs&lt;/strong&gt; like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Jian-Ching&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Set breakpoint (red smail point) at &lt;strong&gt;Console.WriteLine&lt;/strong&gt; next line, then launch by F5, don’t forget look variable info in debugging sidebar, and variable &lt;strong&gt;message&lt;/strong&gt; will display vaule when mouse hover, and output result at below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018-01-14-visual-studio-code-with-dotnet-core/005.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;console-input&quot;&gt;Console input&lt;/h2&gt;
+
+&lt;p&gt;If only display coding text is not fun. So we make program accept input name.&lt;/p&gt;
+
+&lt;p&gt;First change vs-code debugging setting &lt;strong&gt;.vscode/launch.json&lt;/strong&gt;, find &lt;strong&gt;console&lt;/strong&gt; parameter，change value is &lt;strong&gt;integratedTerminal&lt;/strong&gt;‧&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;console&quot;: &quot;integratedTerminal&quot;,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then modify code:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;What's your name?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ReadLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Launch by F5 again, switch to terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2018-01-14-visual-studio-code-with-dotnet-core/006.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The First Steps is over, you can try other C# program.&lt;/p&gt;
+
+&lt;h2 id=&quot;dotnet-restore&quot;&gt;dotnet restore&lt;/h2&gt;
+
+&lt;p&gt;You may remember this command if you using .Net Core before.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet restore
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Since .Net Core 2.0, dotnet restore implicitly by all commands，example new, build, run, so this command is not require.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/zh-tw/dotnet/core/tools/dotnet-restore?tabs=netcore2x&quot;&gt;Microsoft Docs - dotnet restore&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/docs/other/dotnet&quot;&gt;Using .NET Core in Visual Studio Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://microsoft.com/net/core&quot;&gt;Install the C# extension from the VS Code Marketplace&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window&quot;&gt;Configurating launch.json for C# debugging&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Hong, Jian-Ching</name><email>allyusd yahoo com tw</email><uri>https://www.HongJianChing.com/</uri></author><category term="Visual-Studio-Code" /><category term=".Net-Core" /><category term="CSharp" /><summary type="html">.Net Core is cross-platform solution, Visual Studio Code is cross-platform development tool, that is a good choice.</summary></entry><entry><title type="html">Install SDL2 with Cpp on Ubuntu</title><link href="https://blog.hongjianching.com/2017/04/03/install-sdl2-with-cpp-on-ubuntu/" rel="alternate" type="text/html" title="Install SDL2 with Cpp on Ubuntu" /><published>2017-04-03T00:00:00+08:00</published><updated>2017-04-03T00:00:00+08:00</updated><id>https://blog.hongjianching.com/2017/04/03/install-sdl2-with-cpp-on-ubuntu</id><content type="html" xml:base="https://blog.hongjianching.com/2017/04/03/install-sdl2-with-cpp-on-ubuntu/">&lt;h1 id=&quot;install-sdl2-on-ubuntu&quot;&gt;Install SDL2 on Ubuntu&lt;/h1&gt;
 
 &lt;p&gt;You can easy install from package or build self&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
